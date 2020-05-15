@@ -78,3 +78,29 @@ def profits_function(model, y_true, y_pred_probas, name_str):
     plt.xlabel("Thresholds")
     plt.ylabel("Profit")
     plt.legend(loc='best')
+    
+    
+def find_best_threshold(model_profits):
+
+    max_model = None
+    max_threshold = None
+    max_profit = None
+    for model, profits, thresholds in model_profits:
+        max_index = np.argmax(profits)
+        if not max_model or profits[max_index] > max_profit:
+            max_model = model
+            max_threshold = thresholds[max_index]
+            max_profit = profits[max_index]
+    return max_model, max_threshold, max_profit
+
+
+def find_max_threshold(y_true, y_pred_probas):
+    cbm = cost_benefit()
+    profits, thresholds = profit_curve(cbm, y_pred_probas, y_true)
+
+    max_index = np.argmax(profits)
+    
+    max_threshold = thresholds[max_index]
+    max_profit = profits[max_index]
+    
+    return max_profit, max_threshold
