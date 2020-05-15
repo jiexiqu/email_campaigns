@@ -49,7 +49,7 @@ The top performing models were XGBoost Classifier -and- GradientBoosting Classif
 
 To further decide on the best performing model, let's plot a profit curve to check which model yields a higher profit. 
 
- ![image](./profit curve.png)
+ ![image](./profit_curve.png)
 
 
 Looking at feature importance, we can see that the top three influential features are:
