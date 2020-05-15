@@ -19,4 +19,4 @@ For the purpose of analyzing the success of email advertising, we are treating r
 
 Dataset was highly imbalanced even after combinging Read & Acknowledged. 
 
-![image](./Screen Shot 2020-05-15 at 3.57.03 AM.png)
+![image](./email_status.png)
